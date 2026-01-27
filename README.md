@@ -1,4 +1,4 @@
-# MPCDF Raven Cluster Tutorial: PyTorch Lightning with Multi-GPU Training
+# MPCDF Raven Cluster Tutorial: PyTorch Lightning with Multi-GPU and Multi-Node Training
 
 A comprehensive tutorial for training deep learning models on the MPCDF Raven HPC cluster using PyTorch Lightning with distributed training across single GPU, multi-GPU, and multi-node configurations.
 

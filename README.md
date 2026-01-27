@@ -40,7 +40,7 @@ bash setup_venv.sh
 
 ### 2. (Optional) Set up Comet ML - super recommended!!!
 
-Get your account (acceemics get pro for free!) [here](https://www.comet.com/site/products/opik/?utm_medium=ppc&utm_campaign=Opik-Tier1PromptTerms-ProductLP&utm_term=playground%20ai%20prompts&utm_source=adwords&hsa_ad=745367345237&hsa_kw=playground%20ai%20prompts&hsa_net=adwords&hsa_tgt=kwd-3500001&hsa_grp=181543648447&hsa_src=g&hsa_ver=3&hsa_cam=22433031556&hsa_mt=b&hsa_acc=3908332976&gad_source=1&gad_campaignid=22433031556&gbraid=0AAAAACv6e9wuOut08yW_V64Oi6oLSUg6u&gclid=Cj0KCQiA4eHLBhCzARIsAJ2NZoKjyirWZicRvtlWl2z88rghsIsid01ZnXzHHyUHYLY6_1-YOhwVwhsaAuO4EALw_wcB) 
+Get your account (academics get pro for free!) [here](https://www.comet.com/site/products/opik/?utm_medium=ppc&utm_campaign=Opik-Tier1PromptTerms-ProductLP&utm_term=playground%20ai%20prompts&utm_source=adwords&hsa_ad=745367345237&hsa_kw=playground%20ai%20prompts&hsa_net=adwords&hsa_tgt=kwd-3500001&hsa_grp=181543648447&hsa_src=g&hsa_ver=3&hsa_cam=22433031556&hsa_mt=b&hsa_acc=3908332976&gad_source=1&gad_campaignid=22433031556&gbraid=0AAAAACv6e9wuOut08yW_V64Oi6oLSUg6u&gclid=Cj0KCQiA4eHLBhCzARIsAJ2NZoKjyirWZicRvtlWl2z88rghsIsid01ZnXzHHyUHYLY6_1-YOhwVwhsaAuO4EALw_wcB) 
 
 ```bash
 # Set your Comet ML API key for experiment tracking

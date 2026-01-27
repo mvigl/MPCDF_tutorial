@@ -1,0 +1,22 @@
+# Deep Learning Framework
+# Note: torch will be installed separately with CUDA support in setup_venv.sh
+# torch>=2.0.0 is installed via: pip install torch --index-url https://download.pytorch.org/whl/cu121
+
+# PyTorch Lightning
+pytorch-lightning>=2.0.0
+
+# Experiment Tracking
+comet-ml>=3.0.0
+
+# Scientific Computing
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# Configuration
+pyyaml>=6.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Progress bars (used by PyTorch Lightning)
+tqdm>=4.65.0

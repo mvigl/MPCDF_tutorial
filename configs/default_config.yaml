@@ -1,0 +1,59 @@
+# Default configuration for spiral MLP training
+#
+# This file contains default hyperparameters that can be overridden
+# via command-line arguments when running src/train.py
+#
+# Usage:
+#   python src/train.py --config configs/default_config.yaml
+
+# =============================================================================
+# Data Configuration
+# =============================================================================
+num_samples: 10000           # Total number of samples in the spiral dataset
+noise: 0.2                   # Noise level added to the spiral pattern (0.0 = no noise)
+
+# =============================================================================
+# Model Architecture
+# =============================================================================
+hidden_dims: [64, 32, 16]    # Dimensions of hidden layers (list)
+dropout: 0.2                 # Dropout probability for regularization
+
+# =============================================================================
+# Training Hyperparameters
+# =============================================================================
+max_epochs: 50               # Maximum number of training epochs
+batch_size: 32               # Batch size per GPU (effective batch size = batch_size × num_gpus)
+learning_rate: 0.001         # Learning rate for Adam optimizer
+
+# =============================================================================
+# Data Loading
+# =============================================================================
+num_workers: 4               # Number of DataLoader worker processes
+
+# =============================================================================
+# Logging
+# =============================================================================
+comet_project: "mpcdf-raven-tutorial"   # Comet ML project name
+# comet_workspace: "your-workspace"     # Comet ML workspace (optional)
+# comet_api_key: "your-api-key"         # Comet ML API key (better to use environment variable)
+
+# =============================================================================
+# Output
+# =============================================================================
+output_dir: "outputs"        # Directory for checkpoints and logs
+
+# =============================================================================
+# Reproducibility
+# =============================================================================
+seed: 42                     # Random seed for reproducibility
+
+# =============================================================================
+# Notes
+# =============================================================================
+# - This configuration is suitable for the tutorial's spiral pattern dataset
+# - Batch size is per GPU. For multi-GPU training:
+#   - 1 GPU: effective batch size = 32
+#   - 4 GPUs: effective batch size = 128
+#   - 8 GPUs (2 nodes): effective batch size = 256
+# - For larger datasets, increase num_samples and adjust batch_size accordingly
+# - For deeper models, add more dimensions to hidden_dims, e.g., [128, 64, 32, 16]

@@ -1,0 +1,42 @@
+# Core dump files (already present in repository)
+core.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# PyTorch Lightning
+.lightning_logs/
+lightning_logs/
+*.ckpt
+checkpoints/
+
+# Outputs and logs
+outputs/*
+!outputs/.gitkeep
+
+# Comet ML
+.comet.config
+.cometml-runs/
+
+# Editors
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db

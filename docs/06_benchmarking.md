@@ -2,14 +2,58 @@
 
 Learn how to analyze and compare training performance across different GPU configurations.
 
-## Overview
+## Comet ML — The Easiest Way to Benchmark
 
-Performance analysis involves:
-- Parsing SLURM log files
-- Extracting timing information
-- Computing speedup factors
-- Calculating parallel efficiency
-- Generating comparison tables
+The most effective way to compare runs across GPU configurations is through [Comet ML](https://www.comet.com). Our training script automatically logs everything you need — losses, accuracy, system metrics, hyperparameters — so you can focus on running experiments rather than parsing log files.
+
+### What Gets Logged Automatically
+
+When you run `train.py` with a valid `COMET_API_KEY`, every experiment logs:
+
+- **Training metrics**: `train_loss` per step and epoch
+- **Validation metrics**: `val_loss`, `val_acc` at each validation step
+- **Hyperparameters**: batch size, learning rate, hidden dims, number of GPUs/nodes, etc.
+- **System metrics**: GPU utilization, GPU memory usage, CPU usage
+- **Environment**: Python version, PyTorch version, SLURM job ID, hostname
+
+Only rank 0 logs to Comet in multi-GPU runs, so you never get duplicate entries.
+
+### Comparing GPU Configurations
+
+After running single-GPU, multi-GPU, and multi-node jobs, open your Comet project dashboard to compare them side by side:
+
+1. Go to [comet.com](https://www.comet.com) and open your project (`mpcdf-raven-tutorial`)
+2. Select the experiments you want to compare (e.g., `spiral_mlp_1gpu`, `spiral_mlp_4gpu`, `spiral_mlp_8gpu`)
+3. Use the **Compare** view to see:
+   - **Training curves overlay**: Do all configurations converge to the same loss?
+   - **Wall-clock time**: How much faster did multi-GPU finish?
+   - **System metrics**: Were all GPUs fully utilized?
+   - **Hyperparameters diff**: Confirm only GPU count changed between runs
+
+### Useful Comet Features for Benchmarking
+
+- **Panels**: Create custom panels to plot training time vs. GPU count, or efficiency metrics
+- **Grouped experiments**: Tag runs by configuration (e.g., `1gpu`, `4gpu`, `8gpu`) and filter by tag
+- **Export to CSV**: Download raw metric data for custom analysis or plotting
+- **Sharing**: Generate a shareable link to your comparison dashboard for collaborators
+- **GPU utilization charts**: Verify that GPUs are not sitting idle — if utilization is low, your data loading or batch size may be the bottleneck
+
+### Setting Up Comet (If You Haven't Already)
+
+Academics get Comet Pro for free. See the [README setup instructions](../README.md#2-optional-set-up-comet-ml---super-recommended) or:
+
+```bash
+export COMET_API_KEY='your-api-key-here'
+
+# Make it persistent
+echo "export COMET_API_KEY='your-api-key-here'" >> ~/.bashrc
+```
+
+No code changes needed — the training script detects the key automatically.
+
+## Manual Benchmarking from SLURM Logs
+
+If you are not using Comet ML, you can extract performance data directly from SLURM output files.
 
 ## Understanding Benchmark Output
 
@@ -210,11 +254,11 @@ grep "GPU-Util" outputs/slurm-*.out
 
 ### From Comet ML
 
-If using Comet ML, you can:
-1. Export metrics to CSV from dashboard
-2. Compare experiments side-by-side
-3. Create custom charts
-4. Share results with team
+See the [Comet ML section above](#comet-ml--the-easiest-way-to-benchmark) for full details. In short:
+1. Open your project dashboard and select experiments to compare
+2. Use the built-in comparison view for training curves and system metrics
+3. Export metrics to CSV for custom analysis
+4. Share a dashboard link with your team
 
 ## Common Patterns
 

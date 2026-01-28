@@ -105,7 +105,8 @@ MPCDF_tutorial/
 │   ├── 05_multi_node.md               # Multi-node tutorial
 │   ├── 06_benchmarking.md             # Benchmarking guide
 │   ├── 07_troubleshooting.md          # Common issues
-│   └── 08_job_dependencies.md         # SLURM job dependencies
+│   ├── 08_job_dependencies.md         # SLURM job dependencies
+│   └── 09_quotas_and_partitions.md    # Quotas and partition info
 │
 └── outputs/                           # Training outputs
     ├── checkpoints/                   # Model checkpoints
@@ -176,6 +177,7 @@ For detailed information, see the [docs/](docs/) directory:
 6. **[Benchmarking](docs/06_benchmarking.md)** - Performance comparison
 7. **[Troubleshooting](docs/07_troubleshooting.md)** - Common issues and solutions
 8. **[Job Dependencies](docs/08_job_dependencies.md)** - Chaining SLURM jobs
+9. **[Quotas and Partitions](docs/09_quotas_and_partitions.md)** - Resource limits and storage quotas
 
 ## Expected Performance
 

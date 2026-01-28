@@ -135,27 +135,6 @@ Single GPU:  batch_size = 32  →  effective = 32
 - **Possibly fewer epochs needed**: Larger batches can improve generalization
 - **May need learning rate adjustment**: For very large batches
 
-## Comparing to Single GPU
-
-After both jobs complete:
-
-```bash
-source venv/bin/activate
-python src/benchmark.py --output_dir outputs
-```
-
-**Expected output**:
-```
-SPEEDUP ANALYSIS
-======================================
-Baseline (Single GPU): 362.45 seconds
-
-Multi-GPU (4 GPUs, 1 node):
-  Average time: 95.23 seconds
-  Speedup: 3.81x
-  Parallel efficiency: 95.2%
-```
-
 ## Troubleshooting
 
 ### DDP Initialization Hangs

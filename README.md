@@ -9,8 +9,6 @@ This repository demonstrates how to:
 - Scale training from **single GPU** to **multi-GPU** to **multi-node** setups
 - Use PyTorch Lightning's automatic DDP (Distributed Data Parallel)
 - Track experiments with Comet ML
-- Benchmark and compare performance across different configurations
-
 ### Learning Objectives
 
 After completing this tutorial, you will understand:
@@ -76,10 +74,6 @@ tail -f outputs/slurm-<job_id>.out
 scancel <job_id>
 ```
 
-### 5. Benchmark Results
-
-#### Just look at your comet page online!
-
 ## Repository Structure
 
 ```
@@ -93,8 +87,7 @@ MPCDF_tutorial/
 │   ├── __init__.py
 │   ├── datamodule.py                  # Spiral pattern dataset
 │   ├── model.py                       # MLP model definition
-│   ├── train.py                       # Main training script
-│   └── benchmark.py                   # Performance comparison tool
+│   └── train.py                       # Main training script
 │
 ├── slurm_jobs/                        # SLURM job scripts
 │   ├── single_gpu.sh                  # 1 GPU training

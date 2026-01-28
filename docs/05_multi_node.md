@@ -138,23 +138,6 @@ For even better multi-node performance, request high-bandwidth nodes:
 
 **Tradeoff**: Fewer high-BW nodes available (only 32 vs 192 standard)
 
-## Benchmarking All Configurations
-
-After running all three configurations:
-
-```bash
-python src/benchmark.py --output_dir outputs
-```
-
-**Expected results**:
-```
-Configuration                  Time (s)   Speedup   Efficiency
-================================================================
-Single GPU                     362.45     1.00×     100%
-Multi-GPU (4 GPUs, 1 node)     95.23      3.81×     95%
-Multi-Node (8 GPUs, 2 nodes)   57.14      6.34×     79%
-```
-
 ## Troubleshooting
 
 ### Nodes Can't Communicate

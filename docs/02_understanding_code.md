@@ -4,11 +4,10 @@ This guide explains the code structure and how PyTorch Lightning simplifies dist
 
 ## Overview
 
-The tutorial consists of four main Python files:
+The tutorial consists of three main Python files:
 1. [src/datamodule.py](#datamodulepy) - Data generation and loading
 2. [src/model.py](#modelpy) - Neural network definition
 3. [src/train.py](#trainpy) - Training script
-4. [src/benchmark.py](#benchmarkpy) - Performance analysis
 
 ## datamodule.py
 
@@ -166,26 +165,6 @@ comet_logger = CometLogger(
 - Only rank 0 logs to Comet (avoids duplicates)
 - Logs hyperparameters, metrics, system info
 - Creates comparison dashboards
-
-## benchmark.py
-
-### Performance Analysis
-
-Parses SLURM log files to extract:
-- Training time
-- Number of GPUs/nodes
-- Validation metrics
-- Speedup factors
-
-**Usage**:
-```bash
-python src/benchmark.py --output_dir outputs
-```
-
-**Output**:
-- Summary table of all runs
-- Speedup analysis (relative to single GPU)
-- Parallel efficiency calculations
 
 ## How DDP Works Behind the Scenes
 

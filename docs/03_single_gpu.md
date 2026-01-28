@@ -265,9 +265,6 @@ tail -f outputs/slurm-<job_id>.out
 
 # Cancel job
 scancel <job_id>
-
-# After completion: benchmark
-python src/benchmark.py --output_dir outputs
 ```
 
 Ready to scale to multiple GPUs? Continue to [04_multi_gpu.md](04_multi_gpu.md)!

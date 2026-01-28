@@ -4,32 +4,14 @@ Learn how to analyze and compare training performance across different GPU confi
 
 ## Overview
 
-The `benchmark.py` script automates performance analysis by:
+Performance analysis involves:
 - Parsing SLURM log files
 - Extracting timing information
 - Computing speedup factors
 - Calculating parallel efficiency
 - Generating comparison tables
 
-## Running the Benchmark
-
-### Basic Usage
-
-```bash
-# Activate virtual environment
-source venv/bin/activate
-
-# Run benchmark on all logs in outputs/
-python src/benchmark.py --output_dir outputs
-```
-
-### Save Results to CSV
-
-```bash
-python src/benchmark.py --output_dir outputs --save_csv results.csv
-```
-
-## Understanding the Output
+## Understanding Benchmark Output
 
 ### Summary Table
 
@@ -195,9 +177,6 @@ sbatch slurm_jobs/single_gpu.sh  # Uses batch_size=32
 
 # Edit the script or pass argument:
 # --batch_size 64
-
-# Compare results
-python src/benchmark.py --output_dir outputs
 ```
 
 ### Effect of Model Size
@@ -313,8 +292,7 @@ View trace in Chrome: `chrome://tracing`
 
 ## Key Takeaways
 
-1. **Use benchmark.py**: Automates comparison across runs
-2. **Check efficiency**: >75% is good for multi-node
+1. **Check efficiency**: >75% is good for multi-node
 3. **Expect sub-linear scaling**: Communication overhead is normal
 4. **Compare metrics**: Ensure accuracy is consistent
 5. **Document results**: Help others understand scaling behavior

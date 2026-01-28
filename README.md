@@ -104,7 +104,8 @@ MPCDF_tutorial/
 │   ├── 04_multi_gpu.md                # Multi-GPU tutorial
 │   ├── 05_multi_node.md               # Multi-node tutorial
 │   ├── 06_benchmarking.md             # Benchmarking guide
-│   └── 07_troubleshooting.md          # Common issues
+│   ├── 07_troubleshooting.md          # Common issues
+│   └── 08_job_dependencies.md         # SLURM job dependencies
 │
 └── outputs/                           # Training outputs
     ├── checkpoints/                   # Model checkpoints
@@ -174,6 +175,7 @@ For detailed information, see the [docs/](docs/) directory:
 5. **[Multi-Node Training](docs/05_multi_node.md)** - DDP across nodes
 6. **[Benchmarking](docs/06_benchmarking.md)** - Performance comparison
 7. **[Troubleshooting](docs/07_troubleshooting.md)** - Common issues and solutions
+8. **[Job Dependencies](docs/08_job_dependencies.md)** - Chaining SLURM jobs
 
 ## Expected Performance
 
